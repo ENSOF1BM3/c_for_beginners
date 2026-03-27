@@ -1,128 +1,123 @@
 
-## Material preparado pelo Prof. Hudson Neves
-
-
-# 📘 Tipos Primitivos, Tipos de Dados e Variáveis em C
-
-## 🎯 Objetivo
-Este documento apresenta os conceitos fundamentais para iniciantes em programação na linguagem C, abordando:
-
-- O que são **tipos primitivos**
-- Tipos de dados disponíveis na linguagem
-- Declaração e uso de variáveis
-- Exemplos práticos
+# Tipos Primitivos em C
+**Material preparado pelo Prof. Hudson Neves**
 
 ---
 
-# 🧱 1. O que são Tipos Primitivos?
-Tipos primitivos são categorias básicas de dados que definem **o tipo de valor** que uma variável pode armazenar e **quanto espaço de memória** ela ocupará. Eles são a base da programação em C.
-
-C possui quatro grupos principais:
-
-1. **Inteiros (int)** – números sem parte decimal
-2. **Ponto flutuante (float, double)** – números com casas decimais
-3. **Caractere (char)** – um único símbolo
-4. **Lógico (bool)** – verdadeiro ou falso
+## 1. Objetivo
+Este material apresenta os tipos primitivos da linguagem C de forma clara, organizada e adequada para estudantes iniciantes. Após o estudo, o aluno deverá compreender:
+- Quais são os tipos primitivos disponíveis em C
+- Quando utilizar cada tipo
+- Como declarar e utilizar variáveis baseadas nesses tipos
+- Como realizar leitura e escrita de dados
 
 ---
 
-# 🗂️ 2. Tipos de Dados em C
+## 2. O que são tipos primitivos?
+Tipos primitivos são categorias básicas de dados fornecidas pela linguagem C. Eles definem **o tamanho**, **o tipo de valor** e **o comportamento** de variáveis dentro da memória.
 
-## 🔢 2.1 Tipos Inteiros
-Representam números inteiros:
+Os principais grupos são:
+- Valores inteiros
+- Valores com ponto flutuante
+- Caracteres individuais
+- Valores lógicos (C99+)
 
+---
+
+## 3. Tipos inteiros
+Usados para representar valores sem parte decimal.
+
+### Exemplos de declaração
 ```c
-int idade = 20;
-short ano = 2024;
-long populacao = 7800000000;
-unsigned int quantidade = 50;
+int idade;
+short ano;
+long populacao;
+unsigned int quantidade;
 ```
 
-Modificadores:
-- `short`
-- `long`
-- `unsigned`
+### Modificadores
+- `short` → valores menores
+- `long` → valores maiores
+- `unsigned` → somente positivos
 
 ---
 
-## 🔣 2.2 Tipos de Ponto Flutuante
-Representam valores decimais:
+## 4. Tipos de ponto flutuante
+Representam valores com casas decimais.
 
 ```c
-float preco = 10.99;
-double distancia = 1234567.891011;
+float altura;
+double distancia;
 ```
 
-Diferença:
-- `float` → menor precisão
+- `float` → precisão simples
 - `double` → maior precisão
 
 ---
 
-## 🔤 2.3 Tipo Caractere
-Representa um único caractere:
-
+## 5. Tipo caractere
+Armazena um único caractere.
 ```c
-char letra = 'A';
-char simbolo = '#';
+char inicial = 'A';
 ```
 
 ---
 
-## ✔️ 2.4 Tipo Lógico (bool)
-Requer a biblioteca `stdbool.h`:
-
+## 6. Tipo lógico (bool)
+Disponível a partir de C99.
 ```c
 #include <stdbool.h>
 bool ativo = true;
-bool finalizado = false;
 ```
 
 ---
 
-# 📌 3. Variáveis
-
-Variáveis são espaços na memória para armazenar valores.
-
-## 3.1 Declaração de variáveis
-
+## 7. Entrada de dados — scanf
 ```c
-tipo nome = valor;
+int idade;
+printf("Digite sua idade: ");
+scanf("%d", &idade);
 ```
 
-Exemplo:
-
-```c
-int numero = 10;
-float altura = 1.75;
-char inicial = 'H';
-```
-
-## 3.2 Regras para nomear variáveis
-- Devem começar com letra ou `_`
-- Não podem começar com número
-- Sem espaços
-- Sensíveis a maiúsculas/minúsculas
+### Tabela de especificadores
+| Tipo      | Código |
+|-----------|--------|
+| int       | %d     |
+| float     | %f     |
+| double    | %lf    |
+| char      | %c     |
+| bool      | %d     |
 
 ---
 
-# 🖨️ 4. Entrada e saída de dados
+## 8. Saída de dados — printf
+```c
+printf("Idade: %d
+", idade);
+printf("Altura: %.2f
+", altura);
+```
 
+---
+
+## 9. Exemplo completo
 ```c
 #include <stdio.h>
+#include <stdbool.h>
 
 int main() {
     int idade;
     float salario;
     char inicial;
+    bool ativo = true;
 
     printf("Digite sua idade: ");
     scanf("%d", &idade);
 
-    printf("Digite seu salario: ");
+    printf("Digite seu salário: ");
     scanf("%f", &salario);
 
-    printf("Digite sua inicial: ");
+    printf("Digite a inicial do seu nome: ");
     scanf(" %c", &inicial);
 
     printf("
@@ -130,10 +125,12 @@ int main() {
 ");
     printf("Idade: %d
 ", idade);
-    printf("Salario: %.2f
+    printf("Salário: %.2f
 ", salario);
     printf("Inicial: %c
 ", inicial);
+    printf("Ativo: %d
+", ativo);
 
     return 0;
 }
@@ -141,30 +138,23 @@ int main() {
 
 ---
 
-# 🧪 5. Tamanho dos Tipos (sizeof)
+## 10. Exercícios
+**1. Declare variáveis dos seguintes tipos:**
+- int
+- float
+- char
+- double
+- bool
 
+**2. Solicite entrada do usuário para cada variável e exiba os valores.**
+
+**3. Use sizeof para imprimir o tamanho (em bytes) de cada tipo.**
 ```c
 printf("int: %lu bytes
 ", sizeof(int));
 printf("float: %lu bytes
 ", sizeof(float));
-printf("char: %lu bytes
-", sizeof(char));
-printf("double: %lu bytes
-", sizeof(double));
 ```
 
 ---
-
-# 🏁 Conclusão
-Compreender **tipos primitivos**, **tipos de dados** e **variáveis** é fundamental para dominar a linguagem C e avançar para estruturas, ponteiros, funções e muito mais.
-
----
-
-# 📎 Próximos Passos
-- Operadores aritméticos
-- Condicionais (`if`, `switch`)
-- Laços (`for`, `while`)
-- Funções
-- Arrays e strings
-
+Material finalizado.
