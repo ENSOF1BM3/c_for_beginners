@@ -1,41 +1,41 @@
 
-# 📘 Declaração de Variáveis em C
-## Material preparado pelo Prof. Hudson Neves
+# Declaração de Variáveis em C
+**Material preparado pelo Prof. Hudson Neves**
 
 ---
 
-## 🎯 Objetivo
-Este material apresenta uma introdução clara e prática sobre **declaração de variáveis em C**, abordando:
-- O que é uma variável
-- Como declarar e inicializar variáveis
-- Tipos mais comuns
-- Regras de nomenclatura
-- Uso com `scanf` e `printf`
-- Exemplos práticos
-- Exercícios
+## 1. Objetivo
+Este material apresenta os conceitos fundamentais sobre declaração de variáveis na linguagem C. Ao final, o estudante deverá ser capaz de:
+- Entender o que é uma variável
+- Declarar e inicializar variáveis corretamente
+- Conhecer os tipos básicos
+- Aplicar boas práticas de nomenclatura
+- Utilizar scanf e printf para entrada/saída
+- Evitar erros comuns
 
 ---
 
-# 🧠 1. O que é uma variável?
-Uma **variável** é um espaço reservado na memória do computador para armazenar um valor que pode mudar ao longo do programa.
+## 2. O que é uma variável?
+Uma variável é um espaço reservado na memória para armazenar dados que mudam durante a execução do programa. Pense nela como uma “caixa” identificada por um nome.
 
-Exemplo conceitual:
-- Variável `idade` → armazena um número inteiro
-- Variável `altura` → armazena um valor decimal
+Exemplos:
+- `idade` → guarda um número inteiro
+- `altura` → guarda um valor decimal
+- `letra` → guarda um caractere
 
 ---
 
-# 🧱 2. Como declarar variáveis em C
-A declaração segue o padrão:
+## 3. Como declarar variáveis em C
+A estrutura básica é:
 ```
 tipo nome;
 ```
-Ou com inicialização:
+Ou com valor inicial:
 ```
 tipo nome = valor;
 ```
 
-### Exemplos:
+### Exemplos
 ```c
 int idade;
 float altura;
@@ -45,51 +45,43 @@ double salario = 4500.75;
 
 ---
 
-# 🧩 3. Regras de nomenclatura de variáveis
-✔️ Deve começar com letra ou `_`  
-✔️ Pode conter números, letras e `_`  
-✔️ Diferencia maiúsculas e minúsculas (`idade` ≠ `Idade`)  
-❌ Não pode começar com número  
-❌ Não pode conter espaço  
-❌ Não pode ser palavra reservada
+## 4. Boas práticas de nomenclatura
+- Começar com letra ou `_`
+- Pode conter números, letras e `_`
+- Sem espaços
+- Não iniciar com números
+- Linguagem diferencia maiúsculas de minúsculas
+- Não usar palavras reservadas
 
-### Exemplos válidos:
+### Válidos
 ```c
 int contador;
-float media_final;
+float mediaFinal;
 char _codigo;
 ```
-
-### Exemplos inválidos:
+### Inválidos
 ```c
-int 2valor;      // começa com número
-float salário;   // acento
-char nome completo; // espaço
+int 2valor;
+float preço;
+char nome completo;
 ```
 
 ---
 
-# 🔄 4. Declaração, inicialização e atribuição
-### Declaração:
+## 5. Declaração, inicialização e atribuição
 ```c
-int idade;
-```
-### Inicialização:
-```c
-int idade = 20;
-```
-### Atribuição:
-```c
-idade = 30;
+int idade;       // declaração
+int ano = 2026;  // declaração + inicialização
+idade = 30;      // atribuição
 ```
 
 ---
 
-# 🧮 5. Principais tipos de variáveis
+## 6. Tipos de dados mais comuns
 ### Inteiros
 ```c
 int ano = 2026;
-short dia = 27;
+short dia = 15;
 unsigned int alunos = 40;
 ```
 
@@ -112,33 +104,35 @@ bool ativo = true;
 
 ---
 
-# 📥 6. Entrada de dados (scanf)
+## 7. Entrada de dados — scanf
 ```c
 int idade;
 printf("Digite sua idade: ");
 scanf("%d", &idade);
 ```
 
-Tabela de especificadores:
-| Tipo | Código |
-|------|--------|
-| int | %d |
-| float | %f |
-| double | %lf |
-| char | %c |
-| bool | %d |
+### Tabela de especificadores
+| Tipo   | Código |
+|--------|--------|
+| int    | %d     |
+| float  | %f     |
+| double | %lf    |
+| char   | %c     |
+| bool   | %d     |
 
 ---
 
-# 📤 7. Saída de dados (printf)
+## 8. Saída de dados — printf
 ```c
-printf("Idade: %d", idade);
-printf("Altura: %.2f", altura);
+printf("Idade: %d
+", idade);
+printf("Altura: %.2f
+", altura);
 ```
 
 ---
 
-# 🎬 8. Exemplo completo
+## 9. Exemplo completo
 ```c
 #include <stdio.h>
 #include <stdbool.h>
@@ -176,27 +170,27 @@ int main() {
 
 ---
 
-# 🎓 9. Erros comuns
-❌ Usar variável sem inicializar  
-❌ Nome inválido  
-❌ Confundir tipos (ex: usar `%d` com `float`)  
-❌ Esquecer `&` no `scanf`  
-❌ Esquecer `;`
+## 10. Erros comuns
+- Variável sem inicialização
+- Nome inválido
+- Tipo incompatível com o especificador
+- Esquecer o `&` no scanf
+- Esquecer ponto e vírgula
 
 ---
 
-# 📝 10. Exercícios
-### **1. Declare variáveis para:**
+## 11. Exercícios
+**1. Declare variáveis para:**
 - nome (char)
 - idade (int)
 - salário (float)
 - aprovado (bool)
 
-### **2. Leia valores do usuário e imprima formatado.**
+**2. Leia e exiba valores digitados pelo usuário.**
 
-### **3. Declare uma variável sem valor e atribua valores diferentes a ela.**
+**3. Declare uma variável e atribua valores diferentes ao longo do programa.**
 
-### **4. Corrija o código a seguir:**
+**4. Corrija o código:**
 ```c
 float numero;
 scanf("%d", numero)
@@ -206,7 +200,4 @@ int 3alunos;
 
 ---
 
-# ✔️ Aula concluída!
-
-Próximo conteúdo sugerido: operadores aritméticos e condicionais.
-
+Material finalizado.
