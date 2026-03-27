@@ -1,6 +1,6 @@
 
 # Apresentação da Disciplina: Algoritmos e Programação
-**Material preparado pelo Prof. Hudson Neves**
+**Prof. Hudson Neves**
 
 ---
 
