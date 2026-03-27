@@ -1,6 +1,6 @@
 
 # Bibliotecas em C
-**Material preparado pelo Prof. Hudson Neves**
+**Prof. Hudson Neves**
 
 ---
 
